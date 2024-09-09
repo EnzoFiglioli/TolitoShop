@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+:root {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  color:white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+main[data-background="hero"]{
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #d13bce;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+li{
+  position:relative
+}
+
+main[data-background="hero"] {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+main{
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  filter: blur(0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+h1[data-section="slogan"]{
+  font-size: 8rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: black;
+}
+
+main p {
+  font-size: 1.3em;
+}
+
+/* Menu hamburguesa y navegación responsive */
+.menu-hamburguesa {
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  display: none; /* Mostrado solo en pantallas pequeñas */
+}
+
+.menu-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-active ul {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 40%;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+.submenu{
+  position: absolute;
+  width: 30%;
+  right: 0;
+  top: 0;
+  background-color: #1a1a1a
+}
+
+.menu-disable {
+  display: none;
+}
+
+/* Estilos adaptables para dispositivos móviles */
+@media(max-width: 600px) {
+  nav {
+    display: none; /* Oculta el nav estándar en pantallas pequeñas */
+  }  
+  .cantidad-articulos {
+    display: none;
+  }
+  .filtros-productos {
+    justify-content: center;
+    padding: 0;
+  }
+  .cards-container {
+    justify-content: center;
+    padding: 0;
+  }
+  .cards {
+    box-sizing: border-box;
+    flex: 0 0 48%;
+  }
+  .imagenes-container-item-detail {
+    display: none;
+  }
+  .itemDetail {
+    display: flex;
+    flex-direction: column;
+  }
+  .image-detail {
+    width: 100%; /* Ocupa el 100% del contenedor */
+    height: auto; /* Mantiene la proporción original */
+    max-width: 100%;
+  }
+  .itemDetail-container {
+    padding: 0;
+    margin: 0;
+    background-color: gray;
+  }
+  footer section {
+    flex-wrap: wrap;
+  }
+
+  .menu-hamburguesa {
+    display: flex; /* Mostrar en pantallas pequeñas */
+  }
+
+  .menu-active {
+    display: flex;
+  }
+
+  .menu-active ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    position: relative;
+    transition: all 1s ease-in-out;
+  }
+  .item-link .submenu {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    text-align: left;
+  }
+  .submenu{
+    display: flex;
+  }
+  .menu-disable {
+    display: none;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media(min-width: 601px) {
+  .menu-hamburguesa {
+    display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+  }
+
+  nav {
+    display: flex; /* Mostrar el nav estándar en pantallas grandes */
+  }
+
+  .menu-active {
+    display: none; /* Ocultar el menú responsive en pantallas grandes */
+  }
+}
+
+/* Item detail */
+.itemDetail-container {
+  background-color: #fff; 
+  color: #000;
+  padding: 30px;
+}
+.image-detail {
+  width: 500px; 
+  object-fit: cover;
+}

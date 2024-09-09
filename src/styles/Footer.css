@@ -1,0 +1,27 @@
+footer{
+    height:auto;
+    background-color: rgb(40, 40, 40);
+    padding: auto;
+    text-align: center;
+}
+
+footer p {
+    padding-top: 20px;
+    margin: 0;
+}
+.signature{
+    padding-bottom:20px
+}
+
+footer section ul{
+    width: 25%;
+    gap: 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.produtos-footer li{
+    text-transform: uppercase;
+    border-bottom: 0.2px solid gray;
+}

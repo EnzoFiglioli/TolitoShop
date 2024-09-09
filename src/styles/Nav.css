@@ -1,0 +1,94 @@
+li {
+    color: white;
+    position: relative;
+    list-style: none;
+}
+
+li a{
+    color: white;
+}
+
+nav{
+    align-items: center;
+    /* justify-content: center; */
+}
+
+li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: rgb(219, 113, 192);
+    transition: width 0.3s ease;
+}
+
+li:hover::after {
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+nav, ul[data-section='nav']{
+    font-size: 1.1rem;
+    padding: 4px 30px 4px 30px;
+    background-color: rgb(40, 40, 40);
+}
+
+ul[data-section='nav'], li{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+li a:hover{
+    color: white;
+}nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul li .submenu {
+    display: none; /* Ocultar submenú por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(40, 40, 40); /* Puedes ajustar el color de fondo */
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para submenú */
+}
+
+nav ul li:hover .submenu {
+    display: block; /* Mostrar submenú al hacer hover */
+    width: 100%;
+}
+
+nav ul li .submenu li {
+    display: block; /* Mostrar los elementos del submenú en bloque */
+    padding: 5px 0;
+}
+
+nav ul li .submenu li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li .submenu li a:hover {
+    color: gray; /* Cambiar color al hacer hover sobre los enlaces del submenú */
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    align-items: space-between;
+}

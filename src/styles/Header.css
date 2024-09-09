@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+h1[data-logo="tolito"]{
+    color: #fff;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px #000;
+    letter-spacing: -8px;
+    /* font-family: "Nerko One", cursive; */
+    font-weight:900;
+    font-style: normal;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: auto;
+    width: 100%;
+}
+
+header{
+    background:#df61ff;
+    padding: 0 25px 0 25px;
+    display:flex;
+    align-items: center;
+}
+
+header,ul{
+    display:flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+
+li:hover{
+    cursor: pointer;
+}
