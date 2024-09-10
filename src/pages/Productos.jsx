@@ -10,7 +10,7 @@ const Productos = () => {
     const [sortOption, setSortOption] = useState(''); // Estado para la opción seleccionada
     const [categoria, setCategoria] = useState([]);
     useEffect(() => {
-        fetch("/api/productos")
+        fetch("https://tolito-serverr-enzofigliolis-projects.vercel.app/productos")
             .then(response => response.json())
             .then(data => {
                 setProductos(data)
