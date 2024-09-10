@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target: 'http://localhost:8080', // URL de tu servidor backend
+        target: 'https://tolito-serverr-enzofigliolis-projects.vercel.app/', // URL de tu servidor backend
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       }
