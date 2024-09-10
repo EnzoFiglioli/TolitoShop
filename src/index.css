@@ -186,7 +186,7 @@ main p {
   footer section {
     flex-wrap: wrap;
   }
-
+  /* Menu responsive */
   .menu-hamburguesa {
     display: flex; /* Mostrar en pantallas pequeñas */
   }
