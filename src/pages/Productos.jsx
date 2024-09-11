@@ -31,14 +31,18 @@ const Productos = () => {
             .then(productos => setProductos(productos))
         }
 
-        if(sortOption == 'az' || sortOption == 'za' || sortOption == 'precio-asc' || sortOption == 'precio-desc'){
-            fetch(`${URL}/productos/${sortOption}`)
+        if (sortOption === 'az' || sortOption === 'za' || sortOption === 'precio-asc' || sortOption === 'precio-desc') {
+            fetch(`${URL}/productos?sort=${sortOption}`)
+                .then(response => response.json())
+                .then(data => setProductos(data))
+                .catch(err => console.error(err));
         }
 
         if(sortOption == 'Mates' || sortOption == 'Tazas' || sortOption == 'Botellas' || sortOption == 'Vasos'){
             fetch(`${URL}/productos/q?categoria=${sortOption}`)
             .then(data => data.json())
-            .then(response => setProductos(response));
+            .then(response => setProductos(response))
+            .catch(err => console.error(err));
         }
     }, [sortOption]);
 
