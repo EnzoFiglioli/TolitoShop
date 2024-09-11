@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { URL } from '../helpers/api';
 
 const Login = () => {
     const [usuario, setUsuario] = useState("");
@@ -7,7 +8,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('/api/usuario/login', {
+        fetch(`${URL}/usuario/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

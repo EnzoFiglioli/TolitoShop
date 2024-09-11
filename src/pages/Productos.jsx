@@ -25,33 +25,33 @@ const Productos = () => {
 
     useEffect(() => {
         if (sortOption === 'cat' || sortOption === 'filt'){
-            fetch('/api/productos')
+            fetch(`${URL}/productos`)
             .then(response => response.json())
             .then(productos => setProductos(productos))
         }else if (sortOption === 'az') {
-            fetch("https://tolito-serverr.vercel.app/productos/ordenados-a-z")
+            fetch(`${URL}/productos/ordenados-a-z`)
                 .then(response => response.json())
                 .then(ordenados => setProductos(ordenados))
                 .catch(err => console.log(err));
         } else if (sortOption === 'za') {
-            fetch("/api/productos/ordenados-z-a")
+            fetch(`${URL}/productos/ordenados-z-a`)
                 .then(response => response.json())
                 .then(ordenados => setProductos(ordenados))
                 .catch(err => console.log(err));
         } else if (sortOption === 'precio-asc') {
-            fetch("/api/productos/ordenados-precio-menor-mayor")
+            fetch(`${URL}/productos//ordenados-precio-menor-mayor`)
                 .then(response => response.json())
                 .then(ordenados => setProductos(ordenados))
                 .catch(err => console.log(err));
         } else if (sortOption === 'precio-desc') {
-            fetch("/api/productos/ordenados-precio-mayor-menor")
+            fetch(`${URL}/productos/ordenados-precio-mayor-menor`)
                 .then(response => response.json())
                 .then(ordenados => setProductos(ordenados))
                 .catch(err => console.log(err));
         }
 
         if(sortOption == 'Mates' || sortOption == 'Tazas' || sortOption == 'Botellas' || sortOption == 'Vasos'){
-            fetch(`/api/productos/q?categoria=${sortOption}`)
+            fetch(`${URL}/productos/q?categoria=${sortOption}`)
             .then(data => data.json())
             .then(response => setProductos(response));
         }
