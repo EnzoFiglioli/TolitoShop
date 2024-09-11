@@ -94,7 +94,7 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 70px;
+  padding: 40px;
 }
 
 h1[data-section="slogan"]{

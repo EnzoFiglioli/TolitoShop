@@ -29,26 +29,10 @@ const Productos = () => {
             fetch(`${URL}/productos`)
             .then(response => response.json())
             .then(productos => setProductos(productos))
-        }else if (sortOption === 'az') {
-            fetch(`${URL}/productos/ordenados-a-z`)
-                .then(response => response.json())
-                .then(ordenados => setProductos(ordenados))
-                .catch(err => console.log(err));
-        } else if (sortOption === 'za') {
-            fetch(`${URL}/productos/ordenados-z-a`)
-                .then(response => response.json())
-                .then(ordenados => setProductos(ordenados))
-                .catch(err => console.log(err));
-        } else if (sortOption === 'precio-asc') {
-            fetch(`${URL}/productos//ordenados-precio-menor-mayor`)
-                .then(response => response.json())
-                .then(ordenados => setProductos(ordenados))
-                .catch(err => console.log(err));
-        } else if (sortOption === 'precio-desc') {
-            fetch(`${URL}/productos/ordenados-precio-mayor-menor`)
-                .then(response => response.json())
-                .then(ordenados => setProductos(ordenados))
-                .catch(err => console.log(err));
+        }
+
+        if(sortOption == 'az' || sortOption == 'za' || sortOption == 'precio-asc' || sortOption == 'precio-desc'){
+            fetch(`${URL}/productos/${sortOption}`)
         }
 
         if(sortOption == 'Mates' || sortOption == 'Tazas' || sortOption == 'Botellas' || sortOption == 'Vasos'){
