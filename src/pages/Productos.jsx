@@ -3,14 +3,15 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Cards.css';
-import Nav from '../components/Nav'
+import Nav from '../components/Nav';
+import {URL} from '../helpers/api.js'
 
 const Productos = () => {
     const [productos, setProductos] = useState([]);
     const [sortOption, setSortOption] = useState(''); // Estado para la opción seleccionada
     const [categoria, setCategoria] = useState([]);
     useEffect(() => {
-        fetch("/api/productos")
+        fetch(`${URL}/productos`)
             .then(response => response.json())
             .then(data => {
                 setProductos(data)
@@ -28,7 +29,7 @@ const Productos = () => {
             .then(response => response.json())
             .then(productos => setProductos(productos))
         }else if (sortOption === 'az') {
-            fetch("/api/productos/ordenados-a-z")
+            fetch("https://tolito-serverr.vercel.app/productos/ordenados-a-z")
                 .then(response => response.json())
                 .then(ordenados => setProductos(ordenados))
                 .catch(err => console.log(err));
