@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Cards.css';
 import Nav from '../components/Nav';
 import {URL} from '../helpers/api.js'
+import {changeImg, resetImg} from '../handlers/handleProducts.js'
 
 const Productos = () => {
     const [productos, setProductos] = useState([]);
@@ -20,9 +21,11 @@ const Productos = () => {
                 setCategoria(categoriaUnicas)
             })
             .catch(err => console.error(err));
-
-            
     }, []);
+    
+    const handleSortChange = (event) => {
+        setSortOption(event.target.value);
+    };
 
     useEffect(() => {
         if (sortOption === 'cat' || sortOption === 'filt'){
@@ -32,7 +35,7 @@ const Productos = () => {
         }
 
         if (sortOption === 'az' || sortOption === 'za' || sortOption === 'precio-asc' || sortOption === 'precio-desc') {
-            fetch(`${URL}/productos?sort=${sortOption}`)
+            fetch(`${URL}/productos/q?sort=${sortOption}`)
                 .then(response => response.json())
                 .then(data => setProductos(data))
                 .catch(err => console.error(err));
@@ -46,31 +49,16 @@ const Productos = () => {
         }
     }, [sortOption]);
 
-    // Función para cambiar la imagen al pasar el ratón por encima
-    function changeImg(e, newSrc) {
-        e.target.src = newSrc;
-    }
-
-    // Función para restaurar la imagen original al quitar el ratón
-    function resetImg(e, originalSrc) {
-        e.target.src = originalSrc;
-    }
-
-    // Maneja el cambio en el <select> para ordenar productos
-    const handleSortChange = (event) => {
-        setSortOption(event.target.value);
-    };
-
     return (
         <div>
             <Header />
             <Nav/ >
             <main style={{ backgroundColor: 'white', justifyContent: 'space-between' }}>
                 <h2 style={{ color: "black", textAlign: 'center' }}>Productos</h2>
-                <MenuProductos 
-                    handleSortChange={handleSortChange}
+                <MenuProductos
                     categoria={categoria}
                     productos={productos}
+                    handleSortChange={handleSortChange}
                 />
                 <section className="cards-container">
                     {productos.map((item, index) => (
