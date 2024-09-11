@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { URL } from '../helpers/api';
 
 const Search = () => {
     const [msg, setMsg] = useState("");
@@ -7,7 +8,7 @@ const Search = () => {
 
     useEffect(() => {
         if (query.trim()) { // Evitar hacer fetch si la query está vacía
-            fetch(`/api/productos/search?q=${query}`)
+            fetch(`${URL}/productos/search?q=${query}`)
                 .then(response => {
                     if (!response.ok) {
                         return response.json().then(err => { setMsg(err.msg)});

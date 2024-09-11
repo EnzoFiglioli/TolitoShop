@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import { useCookies } from 'react-cookie';
 import { useState, useEffect } from "react";
+import { URL } from "../helpers/api";
 
 const Carrito = () => {
     const [cookies] = useCookies(['carrito']);
@@ -18,7 +19,7 @@ const Carrito = () => {
 
     // Definir la función fuera de useEffect para usarla en el botón
     const comprarCarrito = () => {
-        fetch('/api/carrito/comprar', {
+        fetch(`${URL}/carrito/comprar`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
