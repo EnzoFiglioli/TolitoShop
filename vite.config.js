@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target: 'https://tolito-serverr-enzofigliolis-projects.vercel.app/',
+        target: 'https://tolito-serverr.vercel.app',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       }
