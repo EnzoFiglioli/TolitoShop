@@ -96,7 +96,7 @@ const ProductDetail = () => {
                             <button className="agregarCarrito" onClick={addCart}>Agregar al carrito</button>
                             <div className="disponibilidad">
                                 <h4><b>Envio gratis en todo Olavarría</b></h4>
-                                <h5 style={{margin:'0'}}>2-5 días hábiles (si el pedido contiene Vajilla 3-6 días hábiles)</h5>
+                                <h5 style={{margin:'0'}}>2-5 días hábiles (si el pedido es en zonas rurales.)</h5>
                                 <hr />
                             </div>
                             <div>
