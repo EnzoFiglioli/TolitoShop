@@ -5,6 +5,7 @@ import '../styles/ProductDetail.css';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCookies } from 'react-cookie';
+import { URL } from "../helpers/api";
 
 const ProductDetail = () => {
     const [cookie, setCookie] = useCookies(['carrito']);
@@ -14,7 +15,7 @@ const ProductDetail = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`/api/productos/item/${id}`)
+        fetch(`${URL}/productos/item/${id}`)
             .then((response) => response.json())
             .then(data => {
                 setItemDetail(data);
