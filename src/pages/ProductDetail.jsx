@@ -32,6 +32,7 @@ const ProductDetail = () => {
         expirationDate.setDate(expirationDate.getDate() + 1);
     
         setCookie('carrito', carrito, { expires: expirationDate });
+        alert('Producto agregado exitosamente al carrito')
     }
     
 
