@@ -98,7 +98,7 @@ main{
 }
 
 h1[data-section="slogan"]{
-  font-size: 8rem;
+  font-size: 12vw;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   font-weight: 900;
